@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Rolodex.Domain.Entities.Person>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Contacts</h2>
+<br />
+@{
+    if (@ViewBag.Searching != null){
+        <div class="alert alert-info" role="alert">Searching: @ViewBag.Searching</div>
+    }
+}
+@if(Model.Count()>0)
+{
+ <table class="table table-striped">
+        <tr>
+            <th>
+                Full Name
+            </th>
+        </tr>   
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(p.Name + ", " + p.LastName, "GetContact", new { id = p.PersonID })
+            </td>
+        </tr> 
+    }
+</table>
+}else{
+    <div class="alert alert-warning" role="alert">Sorry there are no records here!</div>
+}
+
+<br>
+<br>
+    @Html.ActionLink("ALL", "Index", new { start = "*" })  |
+    @Html.ActionLink("A", "Index", new { start = "a" })  |
+    @Html.ActionLink("B", "Index", new { start = "b" })  |
+    @Html.ActionLink("C", "Index", new { start = "c" })  |
+    @Html.ActionLink("D", "Index", new { start = "d" })  |
+    @Html.ActionLink("E", "Index", new { start = "e" })  |
+    @Html.ActionLink("F", "Index", new { start = "f" })  |
+    @Html.ActionLink("G", "Index", new { start = "g" })  |
+    @Html.ActionLink("H", "Index", new { start = "h" })  |
+    @Html.ActionLink("I", "Index", new { start = "i" })  |
+    @Html.ActionLink("J", "Index", new { start = "j" })  |
+    @Html.ActionLink("K", "Index", new { start = "k" })  |
+    @Html.ActionLink("L", "Index", new { start = "l" })  |
+    @Html.ActionLink("M", "Index", new { start = "m" })  |
+    @Html.ActionLink("N", "Index", new { start = "n" })  |
+    @Html.ActionLink("O", "Index", new { start = "o" })  |
+    @Html.ActionLink("P", "Index", new { start = "p" })  |
+    @Html.ActionLink("Q", "Index", new { start = "q" })  |
+    @Html.ActionLink("R", "Index", new { start = "r" })  |
+    @Html.ActionLink("S", "Index", new { start = "s" })  |
+    @Html.ActionLink("T", "Index", new { start = "t" })  |
+    @Html.ActionLink("U", "Index", new { start = "u" })  |
+    @Html.ActionLink("V", "Index", new { start = "v" })  |
+    @Html.ActionLink("W", "Index", new { start = "w" })  |
+    @Html.ActionLink("X", "Index", new { start = "x" })  |
+    @Html.ActionLink("Y", "Index", new { start = "y" })  |
+    @Html.ActionLink("Z", "Index", new { start = "z" })  |
+<br>
+<br>
+<p>
+    @Html.ActionLink("Twitter import", "Authorize","Twitter") |
+    @Html.ActionLink("Import", "MassiveImport") |
+    @Html.ActionLink("Search", "Search") |
+    @Html.ActionLink("List", "Index", new { start = "*" })
+</p>
+

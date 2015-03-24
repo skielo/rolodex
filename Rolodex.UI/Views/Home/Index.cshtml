@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div id="bodyContainer" data-ng-controller="MainController">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>LastName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="cont in contacts">
+          <td>{{cont.Name}}</td>
+          <td>{{cont.LastName}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

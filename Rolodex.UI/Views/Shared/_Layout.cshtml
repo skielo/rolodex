@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/app.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body data-ng-app="RolodexApp">
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>@ViewBag.Title</h1>
+            </div>
+            <nav>
+                <ul id="menu" class="nav nav-tabs">
+                  <li role="presentation" class="active">@Html.ActionLink("List", "Index","People")</li>
+                  <li role="presentation">@Html.ActionLink("Import", "MassiveImport","People")</li>
+                  <li role="presentation">@Html.ActionLink("Search", "Search","People")</li>
+                </ul>
+            </nav>
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Massive Import";
+}
+
+<h2>Massive Import</h2>
+<p>Select your cvs file!</p>
+<br/>
+@using (Html.BeginForm("ImportRecords", "People", FormMethod.Post, new { @id = "upldFrm", @enctype = "multipart/form-data" }))
+{
+    <input id="FileUpload" name="FileUpload" type="file" />
+    <button type="submit" class="btn btn-default" title="Upload File" >Submit</button>
+    
+}
+ 
+@if (ViewBag.Feedback != null)
+{
+    <div class="alert alert-info" role="alert">@ViewBag.Feedback</div>
+}

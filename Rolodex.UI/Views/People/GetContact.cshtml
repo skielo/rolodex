@@ -1,0 +1,32 @@
+﻿@model Rolodex.Domain.Entities.Person
+
+@{
+    ViewBag.Title = "GetContact";
+}
+  <h2>Display Information</h2>
+@if (ViewBag.Feedback != null)
+{
+    <div class="alert alert-info" role="alert">@ViewBag.Feedback</div>
+}
+<table class="table table-striped">
+    <tr>
+        <td style="text-align:center">
+            <h1>@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName)</h1><br/><h5>@Html.DisplayFor(model => model.Title)</h5>
+        </td>
+        <td><div style="border-right: 3px solid #C0C0C0; margin-left: 20px; float: left; height:200px"></div></td>        
+        <td style="text-align:left">
+            @Html.DisplayFor(model => model.Description)
+            <br/><br/>
+            <h6>Phone: @Model.Phone</h6>
+            <br/>
+            <h6>E-Mail: <a href="mailto://@Model.Email"> @Model.Email</a></h6>
+            <br/>
+            <h6>Url: <a href="http://@Model.Url" target="_self">@Model.Url</a></h6>
+        </td>
+    </tr>   
+</table>
+<br />
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PersonID }) |
+    @Html.ActionLink("Back to List", "Index", new { start = "*" })
+</p>
